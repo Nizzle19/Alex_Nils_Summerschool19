@@ -1,0 +1,5 @@
+a) size of p: 8 byte
+b) address of p: -2050956144
+c) address of c: -2050956149
+d) arr[0] at line 16: 10
+e) arr[0] at the end of code: 266

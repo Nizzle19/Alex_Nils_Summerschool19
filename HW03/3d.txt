@@ -1,0 +1,9 @@
+1)	Unit Testing: testing of individual units of source code (e.g. individual methodes)
+2)	Integration Testing: test of combination of individual source code units 
+3)	Functional Testing: test that software has all  the required functionalities 
+4)	End-to-end Testing: testing if software performs from start to end as designed. It is used to identify system dependencies and ensure that the right information ist passed between the various Systems.
+5)	Performance Testing: test of stability, responsivness,  and performance  scalability, reliability under defined Test-Scenarios
+6)	Usability Testing: this test is performed to verify the usability of software or hardware with the potential users
+7)	Acceptance Testing: test how software works for user and how it will be accepted by him
+8)	Beta Testing: test under as real as possible application situations of future users
+
