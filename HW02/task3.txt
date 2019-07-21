@@ -1,0 +1,27 @@
+Task 3
+
+We have three functions A, B and C. This functions have different arguments (integer, pointer to integer) 
+and different outputs or 
+
+Function A has an integer as argument.
+
+Functions B and C require  a pointer as argument.
+
+1) Function call A. Argument of type integer. We pass argument x to the function A and get 4+1=5. 
+This function returns integer 5. We print the value x=5
+
+2) At first we call function A and than we call function B. 
+    Call function A: Argument of type integer. We pass argument 5 to the function A and get 5+1=6. 
+   
+    Call function B: Argument is a pointer to integer. It doesn't matter what what variable we pass to the function. We
+     Function B does nothing with variable x. The variable y gets the value 10 bytes from the beginning of the address space. 
+    
+     We print the value x = 6
+   
+
+3) We call function C. 
+     Call function C: Argument is a pointer to integer. The function assignes the value 6 to the argument. 
+     We pass the adress of variable x to the function and get the value 6.
+
+    We print the value x=6
+
