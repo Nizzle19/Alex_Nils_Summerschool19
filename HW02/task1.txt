@@ -1,0 +1,6 @@
+Task 1.
+
+I used command:
+git clone https://github.com/nicolsen/ME459Upstream.git
+
+to clone a GitHub repo that was used last time ME459 was taught at UW-Madison. 
