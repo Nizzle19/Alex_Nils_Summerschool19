@@ -1,0 +1,64 @@
+Task 2:
+
+Info:
+I know, that I had to connect to Euler via SSH. 
+I have Windows on my computer, so I had to install PuTTY. It was very convinient to use Chocolately from the task1
+
+After installing the PuTTY I tried to connect to Euler.
+First attemp was not successful. The connection with Eulor war broken. There was also a message: the password has expired.
+I was prompted to enter a new passwort. After that the fenster with PuTTY was closed.
+
+Answers:
+a) 
+directory:
+/srv/home/akochnev   (Command pwd)
+
+b)
+Shell:
+Bourne Again Shell  (command printf "My current shell - %s\n" "$shell")
+
+c)
+Command ls
+Flags 
+-x  List entries by lines instead of by columns.
+-1  List one file per line.
+--help Display a help message and exit.
+-S sort by file size
+
+d)
+cd /proc
+wc -l cpuinfo
+1040 lines of text
+
+
+c) highest available Version of GCC on EULER
+Latest version of GCC is 9.1.0. 
+Recomended last version of GCC is 8.1.1
+
+Module - V
+Modules Release 4.0.0 (2017-10-16)
+
+$ cat /proc/version
+Linux version 3.10.0-862.11.6.el7.x86_64 (builder@kbuilder.dev.centos.org)
+ (gcc version 4.8.5 20150623 (Red Hat 4.8.5-28) (GCC) ) 
+#1 SMP Tue Aug 14 21:49:04 UTC 2018
+
+
+module avail
+gcc/9.1.0                             
+gcc/acc/6.3.0                         
+gcc/acc/8.1.1(default)            
+gcc/latest                           
+gcc/next-recommended
+gcc/recommended(default) 
+
+module avail -L
+gcc/0_cuda/8.2.0              
+gcc/acc/8.1.1(default)
+gcc/recommended(default)  
+
+
+
+
+
+

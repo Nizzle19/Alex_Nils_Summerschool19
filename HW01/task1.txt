@@ -1,0 +1,32 @@
+Task 1.
+
+1. At first I installed chocolatey.
+I didn't know what management does, so I watched a video on YouTube: 
+Chocolatey - Windows package manager - Beginners guide
+https://www.youtube.com/watch?time_continue=90&v=hfgZYpo5moA
+
+2. I choose programms, which I wanted to install
+
+I wanted to install 3 programs at the same time:
+Flashplayer
+Notepad++
+and
+Videoplayer VLC
+
+3. I wanted to avoid to be promted to agree to the licence terms for every program and I added -y
+Example:
+choco install flashplayeractivex notepadplusplus.install vlc -y
+
+
+
+Additional material:
+You can also search for updates and install updates for the programs, 
+which were installed with Chocalately
+
+Example:
+choco upgrade all -y
+
+
+You can uninstall programms with Chocolately
+Example:
+choco uninstall 

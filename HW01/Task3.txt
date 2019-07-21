@@ -1,0 +1,22 @@
+Task 3
+
+a) 
+I chose vim text editor
+
+b) 
+To save the file and exit the editor I used command 
+:x
+
+c) Command:
+to paste a section of text:
+p or P
+
+to copy a line of text:
+y
+    
+to search for a word in the file:
+in command mode type the forward slash (/)  followed by the string (or word) you want to search
+
+It was difficult to switch between command and edit mode.
+
+
