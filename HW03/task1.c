@@ -1,25 +1,31 @@
 #include <stdio.h>
+#include <conio.h>
 #include <string.h>
+#include <stdlib.h>
 
-void outputT1(int i) { printf("%d ", i); }
+void outputT1(int i);
 
-int main (int argc, char* argv[])
-{
-    // var
-    char text[256];
-    int count = 0;
-    //use input argument and combine it to string
-    strcpy(text, argv[1]);
-    for (int i = 2; i <argc; i=i+1)
-	{
-        strcat(text, argv[i]);
-    }
-    //counting Stringlength
-    while (text[count] != '\0')
-	{
-  		count++;
-    }
-    
+int main(int argc, char* argv[]) {
+	// var
+	//char text[];
+	int count = 0;
+
+	if (argc != 2) {
+		printf("Need one argument to play.\n");
+		exit(1);
+	}
+
+	printf("Argument is %s\n", argv[1]);
+
+	char *t = argv[1];
+	
+
+	while (*t!='\0') { 
+	t++; 
+	if (*t != '\x20') count++;
+	}
+
+
  	outputT1 (count);
   	return 0;
 }

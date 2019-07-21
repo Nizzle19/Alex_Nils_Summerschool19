@@ -1,74 +1,98 @@
+#include <math.h>
 #include <stdio.h>
-#include<time.h>
+#include <stdlib.h>
+#include <time.h>
 
-void outputT2 (double solution [], double differenz, int s )
-{
-	printf ("%f",  differenz);
-	for (int j = 0; j <s; j++)
-	{
-    		printf("%f \n", solution[j]); 
-    	}
- }
+#include "output.h"
+
+
+
+void randomT2(double* matrix, int DIM);
+
+int DIM = 100;
+int i,j=0;
+
+double* A;
+double* b;
+double* c;
+
+int main(int argc, char* argv[]) {
+	
+		
+	// Allocate dynamic memory
+	A = (double *)malloc(DIM * DIM * sizeof(double));
+	//	int A[25] = {1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
+    b = (double *)malloc(DIM * sizeof(double));
+    c = calloc(DIM, sizeof(double));
+
+	// Check for successful allocation
+    if (!(A && b && c)) {
+        printf("Error allocating memory\n");
+        return 1;
+    }
+	// Check for successful allocation
+	if (DIM < 1) {
+		printf("Dim must be greater than 0\n");
+		return 1;
+	}
+
+	// Initialize A
+	randomT2(A,DIM);
+
+ //Schleife fuer Zeilen, Y-Achse
+//	for (i = 0; i < DIM*DIM; i++) {
+//	    printf("%f ", A[i]);
+ //	    printf("\n");
+//	}
+
+
+    // Initialize b
+	for (j = 0; j < DIM; j++) {
+       if (j % 2 == 0) {
+           b[j] = 0.5;
+			}
+	   else {
+           b[j] = -0.5;
+		    }
+	}
+
+	// Schleife fuer Zeilen, Y-Achse
+//	for (i = 0; i < DIM; i++) {
+//	  printf("%f ", b[i]);
+//	 }
+//	 printf("\n");
  
- double  randomT2  (double **matrix, int size)
- {
-     // write matrix with random number
-    for (int i =0; i < size; i++)
-    {
-        for (int j = 0; j <size; j++)
-	{
-            double var1 = rand() ;
-            double var2 = rand() ;
-            double var = var1/var2;
-            matrix [i][j] =  var;
-       
-        }
-    }
-    return **matrix;
- }
- 
- 
-int main()
-{   
-    int size = 1000; // matrix and vector dimension
-    double **matrix;
-    double *vector;
-    double *solution;
-    vector = (double*) malloc(size*sizeof(double));
-    solution = (double*) malloc(size*sizeof(double));
-    matrix = (double**) malloc(size *sizeof(double *));
-    
-    for(int i=0;i<size;i++)
-    {
-    matrix[i]=(double *) malloc(20*sizeof(double));
-    }
-    // write vector
-    for (int j = 1; j <size+1; j++){
-        double a = 0.5;
-            if (j%2==0){
-                vector[j] = -a;
-            }
-            else {
-                vector[j] = a;
-                
-            }
-            
-    }
-    randomT2(matrix, size);
-    //start time measuring
-    clock_t start = clock();
-    // calculate solution
-    for (int i =0; i < size; i++){
-        for (int j = 0; j <size; j++){
-            solution[i] = solution[i] + matrix[i][j]*vector[j];
-             
-        }
-    }
-    clock_t end = clock();
-    // end of time measure
-    double differenz = (double)(end-start)/CLOCKS_PER_SEC;
-    
-    outputT2(solution, differenz, size);
+
+	// Start timer
+	clock_t start = clock();
+
+	// Multiply: c = Ab
+	for (i = 0; i < DIM; i++) {
+		for (j = 0; j < DIM; j++) {
+			if (DIM > 1) {
+				c[i] += A[i * DIM + j] * b[j];
+			}
+		}
+	}
+
+	// Get norm2 of c
+    double normc = 0;
+    for (int i = 0; i < DIM; i++) {
+		normc += c[i] * c[i];
+	}
+    normc = sqrt(normc);
+
+ // Stop timer
+    double end = clock();
+    double total_time = (((double)(end - start)) / CLOCKS_PER_SEC);
+
+ // Output norm and time
+	outputT2(normc, total_time);
+
+ // Free dynamic memory
+   free(A);
+   free(b);
+   free(c);
 
     return 0;
 }
